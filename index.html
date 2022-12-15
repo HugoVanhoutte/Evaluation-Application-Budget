@@ -9,19 +9,21 @@
   <body>
     <div id="container">
         <header>
-            <label for="add-income">Ajouter une Recette Personalisée</label><input type="text" id="add-income">
-            <label for="add-outcome">Ajouter une dépense personalisée</label><input type="text" id="add-outcome">
+            <div id="add-income-div"><input type="text" id="add-income" placeholder="Nom de la nouvelle recette"><button id="add-income-button">Ajouter</button></div>
+            <div id="add-outcome-div"><input type="text" id="add-outcome" placeholder="Nom de la nouvelle dépense"><button id="add-outcome-button">Ajouter</button></div>
         </header>
 
         <div id="content">
 
             <div id="income">
+                <h1>Recettes</h1>
                 <label for="wages">Salaire</label><input type="number" class="income" id="wages">
                 <label for="grants">Aides et allocations</label><input type="number" class="income" id="grants">
                 <label for="annuities">Rentes</label><input type="number" class="income" id="annuities">
             </div>
 
             <div id="outcome">
+                <h1>Dépenses</h1>
                 <label for="rent">Loyer</label><input type="number" class="outcome" id="rent">
                 <label for="credit">Remboursement crédit</label><input type="number" class="outcome" id="credit">
                 <label for="utilities">Electricité/Eau/gaz</label><input type="number" class="outcome" id="utilities">
@@ -32,18 +34,20 @@
                 <label for="care">Frais de Garde</label><input type="number" class="outcome" id="care">
                 <label for="income-tax">Impôts sur le Revenu</label><input type="number" class="outcome" id="income-tax">
                 <label for="local-tax">Impôts Locaux</label><input type="number" class="outcome" id="local-tax">
-                <label for="groceries">Courses</label><input type="number" class="outcome" id="groceries">
+                <label for="groceries">Courses (par semaine)</label><input type="number" class="outcome" id="groceries">
                 <label for="gas">Carburant/Frais de Transport</label><input type="number" class="outcome" id="gas">
                 <label for="sports">Sport/Activités culturelles</label><input type="number" class="outcome" id="sports">
                 <label for="activities">Sorties</label><input type="number" class="outcome" id="activities">
             </div>
 
             <div id="savings">
+                <h1>Epargne</h1>
                 <label for="savings-input">Epargne</label><input type="number" class="savings" id="savings-input">
             </div>
 
             <div id="result">
-
+                <h1>Total</h1>
+                <p id="total"></p>
             </div>
         </div>
     </div>

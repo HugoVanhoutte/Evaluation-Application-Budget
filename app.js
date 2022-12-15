@@ -1,3 +1,30 @@
+const newIncomeButton = document.getElementById("add-income-button");
+const newOutcomeButton = document.getElementById("add-outcome-button");
+
+const incomeDiv = document.getElementById("income");
+const outcomeDiv = document.getElementById("outcome");
+newIncomeButton.addEventListener("click", () => {
+    let newIncomeLabel = document.createElement("label");
+    newIncomeLabel.innerText = document.getElementById("add-income").value.toString();
+    let newIncomeInput = document.createElement("input");
+    newIncomeInput.type = "number";
+    newIncomeInput.className = "income";
+    incomeDiv.append(newIncomeLabel);
+    incomeDiv.append(newIncomeInput);
+    document.getElementById("add-income").value = "";
+});
+
+newOutcomeButton.addEventListener("click", () => {
+    let newOutcomeLabel = document.createElement("label");
+    newOutcomeLabel.innerText = document.getElementById("add-outcome").value.toString();
+    let newOutcomeInput = document.createElement("input");
+    newOutcomeInput.type = "number";
+    newOutcomeInput.className = "outcome";
+    outcomeDiv.append(newOutcomeLabel);
+    outcomeDiv.append(newOutcomeInput);
+    document.getElementById("add-outcome").value = "";
+});
+
 let getIncome = () => {
     let income = document.getElementsByClassName("income");
     let incomeSum = 0;
@@ -28,9 +55,18 @@ let getOutcome = () => {
     return outcomeSum;
 }
 
+let result;
+const total = document.getElementById("total");
 document.body.addEventListener("keydown", function(event) {
     if (event.key === "Enter"){
-        console.log(getIncome());
-        console.log(getOutcome());
+        result = getIncome()-getOutcome();
+        if(total > 0) {
+            total.style.color = "green";
+        } else if(total < 0) {
+            total.style.color = "red";
+        } else {
+            total.style.color = "black";
+        }
+        total.innerText = result.toString();
     }
 })
