@@ -46,10 +46,23 @@ let getOutcome = () => {
     let outcome = document.getElementsByClassName("outcome");
     let outcomeSum = 0;
     for (let i = 0; i < outcome.length; i++) {
-        if(!Number.isNaN(parseFloat(outcome[i].value))) {
-            outcomeSum += parseFloat(outcome[i].value)
+        if (outcome[i].id === "groceries" || outcome[i].id === "gas" || outcome[i].id === "activities") {
+            if (!Number.isNaN(parseFloat(outcome[i].value))) {
+                outcomeSum += outcome[i].value * 4;
+            } else {
+                outcomeSum += 0;
+            }
+        } else if (outcome[i].id === "sports") {if (!Number.isNaN(parseFloat(outcome[i].value))) {
+            outcomeSum += outcome[i].value / 12;
         } else {
             outcomeSum += 0;
+        }
+        } else {
+            if (!Number.isNaN(parseFloat(outcome[i].value))) {
+                outcomeSum += parseFloat(outcome[i].value)
+            } else {
+                outcomeSum += 0;
+            }
         }
     }
     return outcomeSum;
